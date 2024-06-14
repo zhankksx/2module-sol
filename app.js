@@ -30,10 +30,10 @@
         var service = this;
         var toBuyItems = [
             { name: "cookies", quantity: 10 },
-            { name: "cokes", quantity: 2 },
-            { name: "beers", quantity: 6 },
-            { name: "apples", quantity: 4 },
-            { name: "bananas", quantity: 7 }
+            { name: "bananas", quantity: 6 },
+            { name: "grapes", quantity: 5 },
+            { name: "apples", quantity: 3 },
+            { name: "cherries", quantity: 13 }
         ];
         var alreadyBoughtItems = [];
 
@@ -68,13 +68,9 @@
         toBuyList.items = ShoppingListCheckOffService.getToBuyItems();
 
         toBuyList.buyItem = function(itemIndex) {
-            ShoppingListCheckOffService.buyItem(itemIndex);
-        };
-    }
-
-    AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
-
-    function AlreadyBoughtController(ShoppingListCheckOffService) {
+            ShoppingListCheckOffService.buyItem(itemIndex); };}
+AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
+  function AlreadyBoughtController(ShoppingListCheckOffService) {
         var alreadyBougthList = this;
 
         alreadyBougthList.items = ShoppingListCheckOffService.getAlreadyBoughtItems();
@@ -83,11 +79,11 @@
     function ShoppingListCheckOffService() {
         var service = this;
         var toBuyItems = [
-            { name: "cookies", quantity: 10 },
-            { name: "cokes", quantity: 2 },
-            { name: "beers", quantity: 6 },
-            { name: "apples", quantity: 4 },
-            { name: "bananas", quantity: 7 }
+          { name: "cookies", quantity: 10 },
+          { name: "bananas", quantity: 6 },
+          { name: "grapes", quantity: 5 },
+          { name: "apples", quantity: 3 },
+          { name: "cherries", quantity: 13 }
         ];
         var alreadyBoughtItems = [];
 
@@ -98,12 +94,8 @@
             toBuyItems.splice(itemIndex, 1);
         };
 
-        service.getToBuyItems = function() {
-            return toBuyItems;
-        };
-
-        service.getAlreadyBoughtItems = function() {
+  service.getToBuyItems = function() {
+            return toBuyItems;  };
+  service.getAlreadyBoughtItems = function() {
             return alreadyBoughtItems;
-        };
-    }
-})();
+        }; } })();
